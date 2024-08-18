@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Portal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #43cea2, #185a9d);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        .login-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .login-button:hover {
+            background-color: #45a049;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+        .container {
+            display: none;
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+        .container h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .button-green { background-color: #4CAF50; }
+        .button-blue { background-color: #2196F3; }
+        .button-red { background-color: #F44336; }
+        .button-orange { background-color: #FF9800; }
+        .button-purple { background-color: #9C27B0; }
+        .button-teal { background-color: #009688; }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .footer a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button class="login-button" onclick="login()">Login</button>
+        <div class="error-message" id="error-message">Invalid Username or Password</div>
+    </div>
+
+    <div class="container" id="educational-container">
+        <h1>Welcome to Gate ME</h1>
+        <table>
+            <tr>
+                <td><a href="https://drive.google.com/file/d/1U450ApAfh7SAn1mPtVba4npIFLZcMawc/view?usp=sharing" class="button-green">Made Easy Books List</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://drive.google.com/file/d/1U450ApAfh7SAn1mPtVba4npIFLZcMawc/view?usp=sharing" class="button-green">Made Easy Books List</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://drive.google.com/file/d/1_t4GSDF6n1QYyzDo5bMiebLROq8XxFgd/view?usp=drive_link" class="button-blue">Thermodynamics Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book3" class="button-green">Internal Combustion Engines Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book4" class="button-green">Machine Design Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book5" class="button-red">Industrial & Maintenance Engineering Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book6" class="button-purple">Heat Transfer Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book7" class="button-blue">Refrigeration & Air Conditioning Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book8" class="button-blue">Power Plant Engineering Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book9" class="button-blue">Fluid Mechanics & Hydraulic Machines Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book10" class="button-green">Theory of Machines Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book11" class="button-red">Strength of Materials Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book12" class="button-blue">Material Science Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book13" class="button-green">Production Engineering Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book14" class="button-red">Engineering Mechanics Theory with Solved Examples</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book15" class="button-blue">Thermodynamics Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book16" class="button-green">Internal Combustion Engines Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book17" class="button-red">Machine Design Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book18" class="button-blue">Industrial Engineering Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book19" class="button-green">Heat Transfer Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book20" class="button-red">Refrigeration & Air Conditioning Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book21" class="button-green">Power Plant Engineering Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book22" class="button-blue">Fluid Mechanics & Fluid Machinery Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book23" class="button-red">Theory of Machines Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book24" class="button-blue">Strength of Materials Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book25" class="button-green">Material Science Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book26" class="button-red">Production & Maintenance Engineering Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book27" class="button-blue">Engineering Mechanics Objective Practice Sets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book28" class="button-green">General English Text Book with Practice Questions</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book29" class="button-red">General Studies Text Book with Practice Questions</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book30" class="button-blue">Engineering Mathematics for GATE / ESE Prelims Text Book with Previous Solved Papers</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book31" class="button-green">Reasoning & Aptitude for GATE / ESE Prelims Text Book with Previous Solved Papers</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book32" class="button-red">GATE : Previous Solved Papers</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book33" class="button-blue">4400 MCQs for ESE, GATE & PSUs : ME</a></td>
+            </tr>
+            <tr>
+                <td><a href="#book34" class="button-green">Current Affairs (Annual Edition)</a></td>
+            </tr>
+        </table>
+
+        <div class="footer">
+            <p>&copy; 2024 Gate ME. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // User credentials
+        const users = [
+            { username: "Vinod", password: "qa1@ws2#" },
+            { username: "Array", password: "$YwsMewS" },
+            { username: "execute", password: "JtudcfpY" },
+            { username: "course", password: "2UWuUy*9" },
+            { username: "officer", password: "8eyAPdec" },
+            { username: "conference", password: "Sq%Lsy8N" },
+            { username: "boat", password: "e#*#h3Ft" },
+            { username: "oak", password: "uLBm!q5#" },
+            { username: "persist", password: "Kf@&zdVs" },
+            { username: "advertise", password: "b5FaZQ$s" },
+            { username: "bridge", password: "Tf8#szNt" },
+            { username: "discovery", password: "aRt3$Vqc" },
+            { username: "galaxy", password: "PzK8&eRr" },
+            { username: "landscape", password: "Nf4!Yq#d" },
+            { username: "fiction", password: "Gd@7vWcT" },
+            { username: "interval", password: "Lp6#XcVp" },
+            { username: "catalog", password: "Ew8&KsTr" },
+            { username: "shadow", password: "Qx9%Mt#f" },
+            { username: "legend", password: "Hn5!YsQp" },
+            { username: "pulse", password: "Wt3#KzVs" },
+            { username: "victory", password: "Mq2$FbGr" },
+            { username: "signal", password: "Ln8@VcTf" },
+            { username: "anchor", password: "Rp4#XyNz" },
+            { username: "whisper", password: "Jd6!VzPr" },
+            { username: "dawn", password: "Bc7&NsRp" },
+            { username: "horizon", password: "Kf3%XqTf" },
+            { username: "canvas", password: "Zp9!McRt" },
+            { username: "mirage", password: "Vd4&PtXr" },
+            { username: "ember", password: "Lk7#NzSp" },
+            { username: "storm", password: "Cr5%TxVr" },
+            { username: "glacier", password: "Wp8&NzRp" },
+            { username: "tide", password: "Fz6#XyTs" },
+            { username: "voyage", password: "Nr3!Pt#v" },
+            { username: "forest", password: "Hp9%XzRt" },
+            { username: "prairie", password: "Vc4&NrTf" },
+            { username: "echo", password: "Dp7!KsXr" },
+            { username: "summit", password: "Br6#VtPz" },
+            { username: "crystal", password: "Qf8&WrNz" },
+            { username: "compass", password: "Tf2%NpXr" },
+            { username: "ocean", password: "Rp5!Vz#c" },
+            { username: "solstice", password: "Ys3@KtRf" },
+            { username: "comet", password: "Mf9#XcNs" },
+            { username: "ember", password: "Vr4%NpXc" },
+            { username: "nova", password: "Lc8@XzTr" },
+            { username: "artifact", password: "Wd3!KsRp" },
+            { username: "mystic", password: "Qp7%VtNc" },
+            { username: "eclipse", password: "Jf6@XyTs" },
+            { username: "zenith", password: "Fr9#KtZp" },
+            { username: "vertex", password: "Lp2@NcVt" },
+            { username: "echo", password: "Ts5%WpXr" }    
+        ];
+
+        // Simulated database for active sessions (use server-side logic in real implementation)
+        let activeSessions = JSON.parse(localStorage.getItem('activeSessions')) || {};
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                if (activeSessions[username]) {
+                    alert('You are already logged in on another device.');
+                } else {
+                    // Create a session and store it
+                    activeSessions[username] = true;
+                    localStorage.setItem('activeSessions', JSON.stringify(activeSessions));
+
+                    document.querySelector('.login-container').style.display = 'none';
+                    document.getElementById('educational-container').style.display = 'block';
+                }
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+
+        window.onbeforeunload = function () {
+            const username = document.getElementById('username').value;
+            // Remove session on page unload (this is a simple implementation)
+            if (username && activeSessions[username]) {
+                delete activeSessions[username];
+                localStorage.setItem('activeSessions', JSON.stringify(activeSessions));
+            }
+        }
+    </script>
+</body>
+</html>
